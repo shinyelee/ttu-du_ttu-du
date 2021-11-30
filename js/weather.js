@@ -19,6 +19,3 @@ function onGeoOk(position) {
   }
   
   navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-
-  // 35.3489716
-  // 129.0398025
