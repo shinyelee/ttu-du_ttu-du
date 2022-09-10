@@ -1,3 +1,4 @@
+// 명언 목록
 const quotes = [
   {
     quote: "I came here to drop some money, dropping all my money",
@@ -46,10 +47,14 @@ const quotes = [
   },
 ];
 
+// 명언 영역 하위 첫 번째 span 태그는 가사 영역
 const quote = document.querySelector("#quote span:first-child");
+// 두 번째 span 태그는 가수 영역으로 설정
 const author = document.querySelector("#quote span:last-child");
 
+// 무작위로 표시하기 위해 랜덤 함수 사용
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
+// 명언 영역에 무작위로 가사 및 가수 표시
 quote.innerText = todaysQuote.quote;
 author.innerText = todaysQuote.author;
