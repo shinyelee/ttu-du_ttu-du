@@ -28,7 +28,7 @@ function onLoginSubmit(event) {
 // 인삿말 영역에 입력한 사용자 이름을 출력
 function paintGreetings(username) {
   // 인삿말 영역에 인삿말과 입력한 사용자 이름을 세팅
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Hello, ${username}!`;
   // 인삿말 영역을 드러내기 위해 hidden 클래스(display:none;)를 제거
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
