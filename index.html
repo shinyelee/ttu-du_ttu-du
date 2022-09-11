@@ -8,8 +8,15 @@
     <title>TTU-DU TTU-DU</title>
   </head>
   <body>
+    <!-- 날씨 영역 -->
+    <div id="weather">
+      <!-- 날씨/기온 -->
+      <span></span><br />
+      <!-- 지역 -->
+      <span></span>
+    </div>
     <!-- 시계 영역 -->
-    <h2 id="clock">00:00:00</h2>
+    <h1 id="clock">00:00:00</h1>
     <!-- 로그인 폼 -->
     <form class="hidden" id="login-form">
       <!-- 사용자 이름 입력란 -->
@@ -17,7 +24,7 @@
         required
         maxlength="15"
         type="text"
-        placeholder="여기에 이름을 입력하세요."
+        placeholder="여기에 이름을 입력하세요"
       />
     </form>
     <!-- 인삿말 영역 -->
@@ -25,7 +32,7 @@
     <!-- 투두 폼 -->
     <form id="todo-form">
       <!-- 투두 입력란 -->
-      <input type="text" placeholder="여기에 할 일 쓰기" required />
+      <input type="text" placeholder="여기에 할 일 작성" required />
     </form>
     <!-- 투두 목록 -->
     <ul id="todo-list"></ul>
@@ -37,13 +44,6 @@
         <!-- 가수 -->
         <span></span>
       </i>
-    </div>
-    <!-- 날씨 영역 -->
-    <div id="weather">
-      <!-- 날씨/기온 -->
-      <span></span><br />
-      <!-- 지역 -->
-      <span></span>
     </div>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>

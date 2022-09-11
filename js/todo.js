@@ -43,7 +43,7 @@ function paintToDo(newTodo) {
   // js에서 html 요소(button 태그) 생성
   const button = document.createElement("button");
   // 투두 삭제 버튼 만들어 줌
-  button.innerText = "✖";
+  button.innerText = "×";
   // 삭제 버튼 클릭 -> 해당 투두 삭제
   button.addEventListener("click", deleteToDo);
   // 투두 영역 (span 태그) 출력

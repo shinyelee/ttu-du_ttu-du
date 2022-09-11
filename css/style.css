@@ -1,7 +1,16 @@
+/* 전체 */
+body {
+  color: pink;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* hidden 태그로 해당 텍스트를 감추거나 드러냄 */
 .hidden {
   display: none;
 }
 
+/* 배경 */
 img {
   position: absolute;
   width: 100%;
@@ -14,33 +23,62 @@ img {
   opacity: 50%;
 }
 
-body {
-  color: pink;
-  text-align: center;
+/* 날씨 영역 */
+#weather {
+  text-align: left;
 }
 
-/* Hello 이름 */
+/* 시계 및 인삿말 영역 */
+h1 {
+  margin: 0;
+}
+
+/* 시계 영역 */
+#clock {
+  font-size: 200px;
+}
+
+/* 로그인 폼, 인삿말 영역 */
+#login-form,
 #greeting {
-  position: absolute;
-  left: 50%;
-  top: 65%;
-  transform: translate(-50%, -50%);
-  font-size: 60px;
+  font-size: 50px;
 }
 
-h2 {
-  position: absolute;
-  left: 3%;
-  top: 0%;
+/* 사용자 이름 입력란, 투두 입력란 */
+input {
+  background: none;
+  appearance: none;
+  border: 0;
+  font-size: 25px;
+  border-bottom: 2px solid pink;
+  color: pink;
+}
+input::placeholder {
+  color: pink;
+}
+input:focus,
+input:active {
+  outline: none;
 }
 
-ul {
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  list-style: none;
+/* 투두 목록 */
+#todo-list {
+  font-size: 25px;
+  list-style-type: none;
+  padding: 50px;
+  margin: 0;
+}
+
+/* 삭제 버튼 */
+button {
+  width: 40px;
+  height: 35px;
+  font-size: 30px;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  color: pink;
+  background-color: transparent;
 }
 
 #quote {
@@ -48,40 +86,4 @@ ul {
   left: 50%;
   top: 95%;
   transform: translate(-50%, -50%);
-}
-
-#weather {
-  position: absolute;
-  left: 3%;
-  top: 5%;
-}
-
-#login-form {
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: translate(-50%, -50%);
-}
-
-#todo-form {
-  position: absolute;
-  left: 50%;
-  top: 75%;
-  transform: translate(-50%, -50%);
-}
-
-input {
-  height: 30px;
-  width: 300px;
-  border-radius: 4px;
-  font-size: 20px;
-}
-
-button {
-  height: 25px;
-  width: 35px;
-  text-align: center;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
 }
