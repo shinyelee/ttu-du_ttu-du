@@ -45,6 +45,12 @@ h1 {
   font-size: 50px;
 }
 
+/* 인삿말 옆에 로그아웃 버튼이 오도록 정렬 */
+#flex {
+  display: flex;
+  justify-content: center;
+}
+
 /* 투두 삭제 버튼 */
 button {
   width: 30px;
