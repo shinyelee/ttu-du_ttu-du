@@ -36,13 +36,32 @@ h1 {
 /* 시계 영역 */
 #clock {
   font-size: 200px;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 /* 로그인 폼, 인삿말 영역 */
 #login-form,
 #greeting {
   font-size: 50px;
+}
+
+/* 투두 삭제 버튼 */
+button {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  color: pink;
+  background-color: transparent;
+}
+
+/* 로그아웃 버튼 */
+#logout-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 60px;
 }
 
 /* 사용자 이름 입력란, 투두 입력란 */
@@ -70,18 +89,7 @@ input:active {
   margin: 0;
 }
 
-/* 삭제 버튼 */
-button {
-  width: 40px;
-  height: 35px;
-  font-size: 30px;
-  text-align: center;
-  border: 0;
-  outline: 0;
-  color: pink;
-  background-color: transparent;
-}
-
+/* 명언 목록 */
 #quote {
   position: absolute;
   left: 50%;
