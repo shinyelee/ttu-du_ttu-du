@@ -34,7 +34,9 @@
 
 ### 날씨 API
 
-![weather](https://user-images.githubusercontent.com/68595933/189698000-51e02dd4-eb25-4e39-a4a9-fb14e9ff4fdf.png)
+- [openweathermap][날씨 api]을 이용해 현재 사용자의 위치 및 날씨 정보를 받아옵니다.
+
+  ![weather](https://user-images.githubusercontent.com/68595933/189698000-51e02dd4-eb25-4e39-a4a9-fb14e9ff4fdf.png)
 
 ```javascript
 // 위치 제공하면
@@ -57,6 +59,8 @@ function onGeoOk(position) {
 
 ### 현재 시각
 
+- [Date() 생성자][현재 시각]로 시계를 구현합니다.
+
 ![clock](https://user-images.githubusercontent.com/68595933/189698227-8ad06eb2-cfbe-4ef8-92ce-12ab60643ea8.png)
 
 ```javascript
@@ -73,6 +77,9 @@ function getClock() {
 ```
 
 ### 로그인
+
+- 로컬스토리지에 현재 사용자의 이름을 저장합니다.
+- × 버튼을 클릭해 로그아웃 할 수 있습니다.
 
 ![login](https://user-images.githubusercontent.com/68595933/189697372-f070800f-4c7a-490c-9e50-02a183d41489.png)
 
@@ -122,6 +129,8 @@ if (savedUsername === null) {
 
 ### 로그아웃
 
+- 로컬스토리지에 저장된 사용자의 이름을 삭제합니다.
+
 ![logout](https://user-images.githubusercontent.com/68595933/189700276-9d415e97-3d66-4d95-93e5-89e8db44546d.png)
 
 ```javascript
@@ -138,6 +147,9 @@ logoutForm.addEventListener("submit", onLogoutSubmit);
 ```
 
 ### 할 일 등록
+
+- 로컬스토리지에 할 일 목록을 저장합니다.
+- × 버튼을 클릭해 할 일을 삭제할 수 있습니다.
 
 ![todo](https://user-images.githubusercontent.com/68595933/189697738-a6d895a7-5a14-4c6e-b015-c114abd59843.png)
 
@@ -217,6 +229,8 @@ if (savedToDos !== null) {
 
 ### 할 일 삭제
 
+- 로컬스토리지에 저장된 할 일 목록을 삭제합니다.
+
 ```javascript
 // 투두 삭제
 function deleteToDo(event) {
@@ -233,6 +247,8 @@ function deleteToDo(event) {
 ```
 
 ### 명언
+
+- [Math.random()][랜덤 함수]으로 화면 하단에 문구를 무작위로 출력합니다.
 
 ![quote](https://user-images.githubusercontent.com/68595933/189698507-b6e39584-7721-471b-8ef8-58d14272cd58.png)
 
@@ -265,11 +281,13 @@ author.innerText = todaysQuote.author;
 
 ### 문제점
 
-1.
+1. 로그아웃시 이름만 삭제되고 할 일 목록은 남아있음.
+2. 할 일 수정 불가.
 
 ### 개선점
 
-1.
+1. 로그아웃시 이름과 할 일 목록을 함께 삭제할 것.
+2. 수정 기능 추가.
 
 ---
 
@@ -287,3 +305,6 @@ author.innerText = todaysQuote.author;
 
 [데모]: https://shinyelee.github.io/ttu-du_ttu-du/
 [참고]: https://serranoarevalo.github.io/momonton/
+[날씨 api]: https://openweathermap.org/
+[현재 시각]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+[랜덤 함수]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random
