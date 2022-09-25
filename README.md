@@ -25,7 +25,7 @@
 ### 사용
 
 - HTML5/CSS3
-- JavaScript ES6 
+- JavaScript ES6
 
 ---
 
@@ -147,7 +147,7 @@ logoutForm.addEventListener("submit", onLogoutSubmit);
 
 ### 할 일 등록
 
-![todo](https://user-images.githubusercontent.com/68595933/189697738-a6d895a7-5a14-4c6e-b015-c114abd59843.png)
+![save](https://user-images.githubusercontent.com/68595933/189697738-a6d895a7-5a14-4c6e-b015-c114abd59843.png)
 
 - 로컬스토리지에 할 일 목록을 저장합니다.
 - × 버튼을 클릭해 할 일을 삭제할 수 있습니다.
@@ -226,9 +226,40 @@ if (savedToDos !== null) {
 }
 ```
 
+### 할 일 수정 - 22.09.25 업데이트
+
+![update](https://user-images.githubusercontent.com/68595933/192149081-8c0cdeee-8c2f-4cf9-8b34-c5537b04dcc6.png)
+
+- 수정 버튼(연필 아이콘)을 클릭하면 프롬프트를 띄워 로컬스토리지에 저장된 할 일을 수정합니다.
+
+```javascript
+// 투두 수정
+function updateToDo(event) {
+  // 수정할 투두(수정 전)
+  const updateTodo = event.target.previousElementSibling;
+  // 수정한 투두(수정 후)
+  const editTodo = prompt("Edit your TO-DO");
+  // 프롬프트에 수정할 내용을 입력하면
+  if (editTodo) {
+    // 수정할 투두(목록)에 수정한 투두(프롬프트)의 내용을 넣음
+    updateTodo.innerText = editTodo;
+    // 수정한 투두의 부모 요소(li 태그)를 찾아
+    const li = event.target.parentElement;
+    // 수정된 새 투두 목록(배열)에
+    const updatedIndex = toDos.findIndex((toDo) => toDo.id === parseInt(li.id));
+    // 해당 투두 내용 업데이트 후
+    toDos[updatedIndex].text = editTodo;
+    // 투두 목록 저장
+    saveToDos();
+  }
+}
+```
+
 ### 할 일 삭제
 
-- 로컬스토리지에 저장된 할 일 목록을 삭제합니다.
+![delete](https://user-images.githubusercontent.com/68595933/192149319-24cf25f4-288a-41d2-861d-5fe636cbf990.png)
+
+- 삭제 버튼(휴지통 아이콘)을 클릭하면 로컬스토리지에 저장된 할 일을 삭제합니다.
 
 ```javascript
 // 투두 삭제
@@ -286,7 +317,7 @@ author.innerText = todaysQuote.author;
 ### 개선점
 
 1. 로그아웃시 이름과 할 일 목록을 함께 삭제할 것.
-2. 수정 기능 추가.
+2. 22.09.25 기준 수정 기능 추가.
 
 ---
 
@@ -303,9 +334,7 @@ author.innerText = todaysQuote.author;
 <!-- 링크 -->
 
 [데모]: https://shinyelee.github.io/ttu-du_ttu-du/
-
 [날씨 api]: https://openweathermap.org/
 [현재 시각]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
 [랜덤 함수]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
 [참고]: https://serranoarevalo.github.io/momonton/
