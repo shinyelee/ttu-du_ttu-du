@@ -17,6 +17,27 @@ function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
+// 투두 수정
+function updateToDo(event) {
+  // 수정할 투두(수정 전)
+  const updateTodo = event.target.previousElementSibling;
+  // 수정한 투두(수정 후)
+  const editTodo = prompt("Edit your TO-DO");
+  // 프롬프트에 수정할 내용을 입력하면
+  if (editTodo) {
+    // 수정할 투두(목록)에 수정한 투두(프롬프트)의 내용을 넣음
+    updateTodo.innerText = editTodo;
+    // 수정한 투두의 부모 요소(li 태그)를 찾아
+    const li = event.target.parentElement;
+    // 수정된 새 투두 목록(배열)에
+    const updatedIndex = toDos.findIndex((toDo) => toDo.id === parseInt(li.id));
+    // 해당 투두 내용 업데이트 후
+    toDos[updatedIndex].text = editTodo;
+    // 투두 목록 저장
+    saveToDos();
+  }
+}
+
 // 투두 삭제
 function deleteToDo(event) {
   // 삭제 버튼의 클릭 이벤트가 감지되면 해당 투두의 부모 요소(li 태그)를
@@ -26,7 +47,7 @@ function deleteToDo(event) {
   // filter()로 삭제하고 싶은 투두를 투두 목록(배열)에서 제외
   // -> 해당 투두만 삭제된 새 투두 목록(배열) 생성
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-  // 저장
+  // 투두 목록 저장
   saveToDos();
 }
 
@@ -41,15 +62,24 @@ function paintToDo(newTodo) {
   // text 넣어줌
   span.innerText = newTodo.text;
   // js에서 html 요소(button 태그) 생성
-  const button = document.createElement("button");
+  const editBtn = document.createElement("button");
+  // 투두 수정 버튼 만들어 줌
+  editBtn.innerText = "✎";
+  // 수정 버튼 클릭 -> 해당 투두 수정
+  editBtn.addEventListener("click", updateToDo);
+  // js에서 html 요소(button 태그) 생성
+  const deleteBtn = document.createElement("button");
   // 투두 삭제 버튼 만들어 줌
-  button.innerText = "×";
+  deleteBtn.innerText = "🗑";
   // 삭제 버튼 클릭 -> 해당 투두 삭제
-  button.addEventListener("click", deleteToDo);
+  deleteBtn.addEventListener("click", deleteToDo);
+
   // 투두 영역 (span 태그) 출력
   li.appendChild(span);
+  // 수정 버튼(button 태그) 출력
+  li.appendChild(editBtn);
   // 삭제 버튼(button 태그) 출력
-  li.appendChild(button);
+  li.appendChild(deleteBtn);
   // 투두 목록 영역(li 태그) 출력
   toDoList.appendChild(li);
 }
