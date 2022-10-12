@@ -6,6 +6,8 @@ const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 // 로그아웃 폼
 const logoutForm = document.querySelector("#logout-form");
+// 투두 목록 폼
+const todoList = document.querySelector("#todo-list");
 
 // hidden 클래스(display:none;)
 const HIDDEN_CLASSNAME = "hidden";
@@ -25,6 +27,8 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username);
   // 인삿말 영역에 입력한 사용자 이름을 출력
   paintGreetings(username);
+  // 투두 목록을 드러내기 위해 hidden 클래스(display:none;)를 제거
+  todoList.classList.remove(HIDDEN_CLASSNAME);
 }
 
 // 인삿말 영역에 입력한 사용자 이름을 출력
