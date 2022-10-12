@@ -6,7 +6,7 @@
 
 ## 시작
 
-- 할 일을 메모하는 메모장(to-do list) 웹 프로젝트입니다.
+- 할 일을 기록하는 메모장(to-do list) 웹 프로젝트입니다.
 - [데모 사이트 바로가기][데모]
 
 ---
@@ -179,7 +179,7 @@ function onLogoutSubmit() {
 logoutForm.addEventListener("submit", onLogoutSubmit);
 ```
 
-### 4. 할 일 목록
+### 4. 할 일 목록(To-Do list)
 
 ![update](https://user-images.githubusercontent.com/68595933/192149081-8c0cdeee-8c2f-4cf9-8b34-c5537b04dcc6.png)
 ![delete](https://user-images.githubusercontent.com/68595933/192149319-24cf25f4-288a-41d2-861d-5fe636cbf990.png)
@@ -332,7 +332,7 @@ function updateToDo(event) {
 
 - 4.3. 할 일 삭제
 
-- 삭제 버튼(휴지통 아이콘)을 클릭하면 로컬스토리지에 저장된 할 일을 삭제합니다.
+  - 삭제 버튼(휴지통 아이콘)을 클릭하면 로컬스토리지에 저장된 할 일을 삭제합니다.
 
 ```javascript
 // todo.js
